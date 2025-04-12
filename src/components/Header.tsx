@@ -15,12 +15,6 @@ const navItems = [
   { label: 'contact', href: '#contact' },
 ]
 
-const languages = ['fr', 'en', 'mg']
-const languageLabels: Record<string, string> = {
-  fr: 'Français',
-  en: 'English',
-  mg: 'Malagasy',
-}
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false)

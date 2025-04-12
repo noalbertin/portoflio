@@ -7,7 +7,6 @@ import toast from 'react-hot-toast'
 
 export default function Contact() {
   const { t } = useTranslation()
-  const [status, setStatus] = useState('')
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
@@ -31,10 +30,9 @@ export default function Contact() {
         body: JSON.stringify(data),
       })
 
-      const result = await res.json()
 
       if (res.ok) {
-        setStatus(t('message_envoye'))
+
         toast.success(t('message_envoye'), {
           icon: '✔️',
           style: {
@@ -49,11 +47,9 @@ export default function Contact() {
         setEmail('')
         setMessage('')
       } else {
-        setStatus(t('erreur_envoi'))
         toast.error(t('erreur_envoi'))
       }
-     } catch (error) {
-      setStatus(t('erreur_envoi'))
+     } catch {
       toast.error(t('erreur_envoi'))
     }
   }

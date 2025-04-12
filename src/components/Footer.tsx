@@ -1,10 +1,10 @@
 'use client'
-import { useTranslation, Trans } from 'react-i18next'
+import { Trans } from 'react-i18next'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import Image from 'next/image'
 
 export default function Footer() {
-  const { t } = useTranslation()
+
 
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6 border-t border-gray-200 dark:border-gray-700">
