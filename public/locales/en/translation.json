@@ -1,0 +1,38 @@
+{
+    "accueil": "Home",
+    "competences": "Skills",
+    "projets": "Projects",
+    "contact": "Contact",
+    "langue": "English",
+    "intro1": "I am a <1>full stack</1> web developer passionate about creating high-performance, scalable, and modern applications. I love building elegant frontend interfaces as much as designing robust backend APIs.",
+    "intro2": "My favorite stack includes technologies like <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. I'm constantly learning, testing new tools, and improving my skills to deliver clean, maintainable, and efficient code.",
+    "download_cv": "Download my CV",
+    "competences_phrase": "Technical skills",
+    "projets_phrase": "Recent projects",
+    "contact_phrase": "Contact me",
+    "droit": " All rights reserved.",
+    "email": "Email",
+    "message": "Message",
+    "nom": "Name",
+    "projects": {
+      "portfolio": {
+        "title": "Next.js Portfolio",
+        "description": "My personal site built with Next.js, Tailwind, and Framer Motion."
+      },
+      "api": {
+        "title": "Node.js REST API",
+        "description": "A secure API with JWT, Express, and MySQL."
+      },
+      "dashboard": {
+        "title": "React Admin Dashboard",
+        "description": "Admin interface with charts and authentication for the FIMISA association."
+      }
+    },
+    "projets_": "Recent Projects",
+    "code": "Source",
+    "demo": "Live Demo",
+    "envoyer":"Send",
+    "message_envoye": "Your message has been sent!",
+    "erreur_envoi": "Error sending message."
+  }
+  

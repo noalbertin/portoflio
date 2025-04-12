@@ -1,0 +1,38 @@
+{
+    "accueil": "Accueil",
+    "competences": "Compétences",
+    "projets": "Projets",
+    "contact": "Contact",
+    "langue": "Français",
+    "intro1": "Je suis un développeur web <1>full stack</1> passionné par la création d'applications performantes, scalables et modernes. J'aime autant développer des interfaces frontend élégantes que concevoir des API robustes côté backend.",
+    "intro2": "Mon stack préféré inclut des technologies comme <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. Je suis constamment en train d'apprendre, de tester de nouveaux outils et d'améliorer mes compétences pour livrer du code propre, maintenable et efficace.",
+    "download_cv": "Télécharger mon CV",
+    "competences_phrase": "Compétences techniques",
+    "projets_phrase": "Projets récents",
+    "contact_phrase": "Me contacter",
+    "droit": " Tous droits réservés.",
+    "email": "Email",
+    "message": "Message",
+    "nom": "Nom",
+    "projects": {
+    "portfolio": {
+      "title": "Portofolio Next.js",
+      "description": "Mon site personnel codé avec Next.js, Tailwind, Framer Motion."
+    },
+    "api": {
+      "title": "API REST Node.js",
+      "description": "Une API sécurisée avec JWT, Express, MySQL."
+    },
+    "dashboard": {
+      "title": "Dashboard React Admin",
+      "description": "Interface d’administration avec graphiques et authentification pour l'association FIMISA"
+    }
+  },
+  "projets_": "Projets récents",
+  "code": "Code",
+  "demo": "Démo",
+  "envoyer":"Envoyer",
+  "message_envoye": "Votre message a bien été envoyé !",
+  "erreur_envoi": "Erreur lors de l'envoi du message."
+  }
+  

@@ -1,0 +1,39 @@
+{
+    "accueil": "Fandraisana",
+    "competences": "Fahaiza-manao",
+    "projets": "Tetikasako",
+    "contact": "Mifandray",
+    "langue": "Malagasy",
+    "intro1": "Mpamorona tranonkala <1>full stack</1> aho izay mankafy mamorona rindranasa matanjaka, azo ampitomboina ary maoderina. Tiako mitovy amin'ny mamolavola endrika frontend tsara tarehy sy mamolavola API backend mafy orina.",
+    "intro2": "Ny stack tiako indrindra dia ahitana teknolojia toy ny <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. Mianatra hatrany aho, mitsapa fitaovana vaovao, ary manatsara ny fahaiza-manaoko mba hanomezana kaody madio sy mora karakaraina.",
+    "download_cv": "Sintomy ny CV-ko",
+    "competences_phrase": "Talenta ara-teknolojia",
+    "projets_phrase": "Tetikasa vao haingana",
+    "contact_phrase": "Hifandraisako aminao",
+    "droit": " Zo rehetra voatokana.",
+    "email": "Mailaka",
+    "message": "Hafatra",
+    "nom": "Anarana",
+      "projects": {
+        "portfolio": {
+          "title": "Portfolio Next.js",
+          "description": "Ny tranonkalako manokana amin'ny Next.js, Tailwind ary Framer Motion."
+        },
+        "api": {
+          "title": "Node.js REST API",
+          "description": "API voaaro amin'ny JWT, Express, MySQL."
+        },
+        "dashboard": {
+          "title": "Dashboard React Admin",
+          "description": "Interface fitantanana amin'ny sary sy fidirana ho an'ny fikambanana FIMISA"
+        }
+      },
+      "projets_": "Tetikasa vao haingana",
+      "code": "Kaody",
+      "demo": "Seho mivantana",
+      "envoyer":"Alefa",
+      "message_envoye": "Tafapetraka tsara ny hafatrao!",
+    "erreur_envoi": "Nisy olana nandefasana ny hafatra."
+    }
+    
+  
