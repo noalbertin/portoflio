@@ -1,10 +1,9 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Toaster } from 'react-hot-toast'
 
-import ThemeContextProvider from "@/context/ThemeContext";
-import I18nProvider from "@/components/I18nProvider";
+import Providers from "./Providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -32,12 +31,9 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <ThemeContextProvider>
-          <I18nProvider>
-              {children} 
-              <Toaster />
-            </I18nProvider>
-        </ThemeContextProvider>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );

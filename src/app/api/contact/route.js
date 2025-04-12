@@ -7,7 +7,7 @@ export async function POST(req) {
 
   try {
     const emailData = await resend.emails.send({
-        from: 'Contact <contact@resend.dev>', // Utilise l'email de test de Resend
+        from: 'Contact <contact@resend.dev>',
         to: 'jeanneaurelle100@gmail.com', 
         subject: `Nouveau message de ${name}`,
         html: `

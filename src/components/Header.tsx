@@ -31,7 +31,7 @@ export default function Header() {
       <nav className="flex items-center justify-between px-4 py-3 max-w-6xl mx-auto">
         {/* Logo plus compact */}
         <motion.div
-          className="relative w-32 h-8" // Taille réduite
+          className="relative w-32 h-8" 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
@@ -41,7 +41,7 @@ export default function Header() {
               src="/logo.png"
               alt="Logo"
               fill
-              className="object-contain object-left" // Meilleure adaptation
+              className="object-cover" 
               priority
             />
           </a>

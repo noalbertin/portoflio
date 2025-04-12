@@ -1,14 +1,12 @@
 'use client'
 
 import { useTranslation, Trans } from 'react-i18next'
-
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 
 export default function About() {
 
     const { t } = useTranslation()
-
     
   return (
     <section
@@ -73,11 +71,11 @@ export default function About() {
               whileTap={{ scale: 0.95 }}
               className="px-6 py-3 bg-indigo-600 text-white rounded-lg font-medium hover:bg-indigo-700 transition-colors shadow-lg"
               onClick={() => {
-                // Créer un lien temporaire
+
                 const link = document.createElement('a');
-                // Chemin vers votre fichier PDF (à adapter selon votre structure de fichiers)
+                
                 link.href = '/cv/Nirindrainy_Sylvano_Albertin_CV.pdf'; 
-                link.download = 'Nirindrainy_Sylvano_Albertin_CV.pdf'; // Nom du fichier téléchargé
+                link.download = 'Nirindrainy_Sylvano_Albertin_CV.pdf'; 
                 document.body.appendChild(link);
                 link.click();
                 document.body.removeChild(link);

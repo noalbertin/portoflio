@@ -8,21 +8,23 @@ export default function Footer() {
 
   return (
     <footer className="bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300 py-6 border-t border-gray-200 dark:border-gray-700">
-      <div className="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
-        <div className="flex items-center gap-3">
-          {/* Favicon intégré ici */}
-          <Image
-            src="/favicon.png" // Assure-toi que le fichier favicon.ico est bien dans le dossier public/
-            alt="Logo"
-            width={30}
-            height={30}
-            className="rounded"
-          />
-          <p className="text-sm font-medium">
-            &copy; {new Date().getFullYear()} Nirindrainy Sylvano Albertin.{' '}
-            <Trans i18nKey="droit" />
-          </p>
-        </div>
+      <div className="max-w-6xl mx-auto px-4 flex justify-center items-center gap-6 text-center flex-wrap">
+        {/* Logo */}
+        <Image
+          src="/favicon.png"
+          alt="Logo"
+          width={30}
+          height={30}
+          className="rounded"
+        />
+
+        {/* Texte */}
+        <p className="text-sm font-medium">
+          &copy; {new Date().getFullYear()} Nirindrainy Sylvano Albertin.{' '}
+          <Trans i18nKey="droit" />
+        </p>
+
+        {/* Icônes */}
         <div className="flex gap-4 text-xl">
           <a
             href="https://github.com/noalbertin"
@@ -43,5 +45,7 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+
+
   )
 }
