@@ -1,6 +1,5 @@
 'use client'
 import { useTranslation, Trans } from 'react-i18next'
-import { useState, useEffect } from 'react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import Image from 'next/image'
 
