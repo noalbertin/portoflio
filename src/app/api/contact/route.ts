@@ -4,8 +4,8 @@ import { NextRequest } from 'next/server'
 const resend = new Resend(process.env.RESEND_API_KEY)
 
 export async function POST(req: NextRequest) {
+  
   const { name, email, message } = await req.json()
-
   try {
     const { data, error } = await resend.emails.send({
       from: 'Contact <contact@resend.dev>',
@@ -39,7 +39,7 @@ export async function POST(req: NextRequest) {
         </div>
       `
     })
-
+    
     if (error) {
       console.error('Erreur Resend:', error)
       return new Response(JSON.stringify({ message: 'Erreur lors de l’envoi de l’e-mail' }), {
