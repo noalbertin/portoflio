@@ -10,7 +10,7 @@ const projects = [
     description: 'projects.portfolio.description',
     tech: ['Next.js', 'React', 'Tailwind CSS'],
     github: 'https://github.com/noalbertin/portfolio',
-    demo: 'https://nsa.vercel.com',
+    demo: 'https://noalbertin.vercel.app',
   },
   {
     title: 'projects.api.title',

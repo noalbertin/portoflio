@@ -72,11 +72,11 @@ export default function Contact() {
         <h2 className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-8">
           <Trans i18nKey="contact_phrase" />
         </h2>
-        <form onSubmit={handleSubmit} className="space-y-6 text-left">
-          <div>
-            <label htmlFor="name" className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-              <Trans i18nKey="nom" />
-            </label>
+
+        <form onSubmit={handleSubmit} className="space-y-8 text-left">
+
+          {/* Floating label: Nom */}
+          <div className="relative">
             <input
               type="text"
               name="name"
@@ -84,14 +84,19 @@ export default function Contact() {
               required
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="peer w-full px-4 pt-6 pb-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Nom"
             />
+            <label
+              htmlFor="name"
+              className="absolute left-4 top-2 text-gray-500 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 dark:peer-placeholder-shown:text-gray-300 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600"
+            >
+              <Trans i18nKey="nom" />
+            </label>
           </div>
 
-          <div>
-            <label htmlFor="email" className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-              <Trans i18nKey="email" />
-            </label>
+          {/* Floating label: Email */}
+          <div className="relative">
             <input
               type="email"
               name="email"
@@ -99,14 +104,19 @@ export default function Contact() {
               required
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="peer w-full px-4 pt-6 pb-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Email"
             />
+            <label
+              htmlFor="email"
+              className="absolute left-4 top-2 text-gray-500 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 dark:peer-placeholder-shown:text-gray-300 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600"
+            >
+              <Trans i18nKey="email" />
+            </label>
           </div>
 
-          <div>
-            <label htmlFor="message" className="block mb-1 font-medium text-gray-700 dark:text-gray-200">
-              <Trans i18nKey="message" />
-            </label>
+          {/* Floating label: Message */}
+          <div className="relative">
             <textarea
               name="message"
               id="message"
@@ -114,8 +124,15 @@ export default function Contact() {
               required
               value={message}
               onChange={(e) => setMessage(e.target.value)}
-              className="w-full px-4 py-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              className="peer w-full px-4 pt-6 pb-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
+              placeholder="Message"
             ></textarea>
+            <label
+              htmlFor="message"
+              className="absolute left-4 top-2 text-gray-500 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 dark:peer-placeholder-shown:text-gray-300 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600"
+            >
+              <Trans i18nKey="message" />
+            </label>
           </div>
 
           <button
@@ -132,5 +149,6 @@ export default function Contact() {
         </form>
       </motion.div>
     </section>
+
   )
 }
