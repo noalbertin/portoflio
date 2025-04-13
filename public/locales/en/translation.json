@@ -1,8 +1,16 @@
 {
-    "accueil": "Home",
+    "apropos": "About",
     "competences": "Skills",
     "projets": "Projects",
     "contact": "Contact",
+
+    "anchor": {
+      "apropos": "about",
+      "competences": "skills",
+      "projets": "projects",
+      "contact": "contact"
+    },
+    
     "langue": "English",
     "intro1": "I am a <1>full stack</1> web developer passionate about creating high-performance, scalable, and modern applications. I love building elegant frontend interfaces as much as designing robust backend APIs.",
     "intro2": "My favorite stack includes technologies like <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. I'm constantly learning, testing new tools, and improving my skills to deliver clean, maintainable, and efficient code.",

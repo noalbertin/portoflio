@@ -59,7 +59,7 @@ export default function Contact() {
 
   return (
     <section
-      id="contact"
+      id={t('anchor.contact')}
       className="min-h-screen flex flex-col justify-center items-center px-4 py-20 bg-white dark:bg-gray-900"
     >
       <motion.div

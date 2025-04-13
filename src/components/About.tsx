@@ -10,7 +10,7 @@ export default function About() {
     
   return (
     <section
-      id="apropos"
+      id={t('anchor.apropos')}
       className="min-h-screen flex flex-col justify-center items-center px-4 py-20 bg-white dark:bg-gray-900"
     >
       <div className="max-w-6xl w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">

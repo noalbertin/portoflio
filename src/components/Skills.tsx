@@ -1,5 +1,5 @@
 'use client'
-import { Trans } from 'react-i18next'
+import { useTranslation, Trans } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJsSquare, FaGitAlt, FaPhp, FaJava } from 'react-icons/fa'
 import { SiTypescript, SiTailwindcss, SiMysql } from 'react-icons/si'
@@ -22,10 +22,12 @@ const skills = [
 
 
 export default function Skills() {
+
+      const { t } = useTranslation()
     
   return (
     <section
-      id="competences"
+      id={t('anchor.competences')}
       className="min-h-screen bg-gray-100 dark:bg-gray-900 px-4 py-20"
     >
       <motion.div

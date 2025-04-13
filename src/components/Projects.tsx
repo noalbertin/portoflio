@@ -36,7 +36,7 @@ export default function Projects() {
     
   return (
     <section
-      id="projets"
+    id={t('anchor.projets')}
       className="min-h-screen bg-white dark:bg-gray-900 px-4 py-20"
     >
       <motion.div
