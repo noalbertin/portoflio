@@ -20,11 +20,9 @@ export const metadata: Metadata = {
   description: "Nirindrainy Sylvano Albertin developpeur",
   icons: {
     icon: "/favicon.png",
-  },
-  other: {
-    'google-site-verification': 'kLIWa6XfD_tBSAVIdEg902-TgyK4XT3gI-yliuPBErk',
   }
 };
+
 
 
 export default function RootLayout({
