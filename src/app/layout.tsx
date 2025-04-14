@@ -1,6 +1,6 @@
+// app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Head from "next/head"; // 👈 Import pour injection manuelle dans <head>
 import "./globals.css";
 
 import Providers from "./Providers";
@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  other: {
+    'google-site-verification': 'kLIWa6XfD_tBSAVIdEg902-TgyK4XT3gI-yliuPBErk',
+  }
 };
+
 
 export default function RootLayout({
   children,
@@ -30,15 +34,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <Head>
-        {/* Balise de vérification Google Search Console */}
-        <meta
-          name="google-site-verification"
-          content="kLIWa6XfD_tBSAVIdEg902-TgyK4XT3gI-yliuPBErk"
-        />
-      </Head>
       <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Providers>{children}</Providers>
+        <Providers>
+          {children}
+        </Providers>
       </body>
     </html>
   );
