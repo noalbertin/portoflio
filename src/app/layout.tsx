@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Portfolio Sylvano Albertin",
-  description: "Nirindrainy Sylvano Albertin developpeur",
+  title: "Sylvano Albertin – Portfolio",
+  description: "Découvrez le portfolio de Sylvano Albertin : développeur web passionné et créatif.",
   icons: {
     icon: "/favicon.png",
   }
