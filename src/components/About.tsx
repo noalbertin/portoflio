@@ -46,15 +46,26 @@ export default function About() {
           <h2 className="text-3xl sm:text-4xl font-bold text-indigo-600 dark:text-indigo-400">
             Nirindrainy Sylvano Albertin
           </h2>
+
+          
           
           <p className="text-md sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             <Trans
               i18nKey="intro1"
               components={{
-                1: <span className="font-semibold text-indigo-600 dark:text-indigo-400" />
+                1: (
+                  <a
+                    href="https://eni.mg/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-semibold text-indigo-600 dark:text-indigo-400 underline hover:text-indigo-700"
+                  />
+                ),
+                2: <span className="font-semibold text-indigo-600 dark:text-indigo-400" />
               }}
             />
           </p>
+
           
           <p className="text-md sm:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
             <Trans

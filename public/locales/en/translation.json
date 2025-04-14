@@ -12,7 +12,7 @@
     },
     
     "langue": "English",
-    "intro1": "I am a <1>full stack</1> web developer passionate about creating high-performance, scalable, and modern applications. I love building elegant frontend interfaces as much as designing robust backend APIs.",
+    "intro1": "I am a Master's student at <1>École Nationale d'Informatique (ENI), Fianarantsoa</1> and a passionate <2>full stack</2> web developer who loves creating high-performance, scalable, and modern applications. I enjoy building elegant frontend interfaces as much as designing robust backend APIs.",
     "intro2": "My favorite stack includes technologies like <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. I'm constantly learning, testing new tools, and improving my skills to deliver clean, maintainable, and efficient code.",
     "download_cv": "Download my CV",
     "competences_phrase": "Technical skills",

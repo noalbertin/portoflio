@@ -21,7 +21,11 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.png",
   },
+  other: {
+    "google-site-verification": "kLIWa6XfD_tBSAVIdEg902-TgyK4XT3gI-yliuPBErk",
+  },
 };
+
 
 export default function RootLayout({
   children,
