@@ -3,6 +3,7 @@
 import { IoLanguage } from 'react-icons/io5'
 import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
+import { AnimatePresence, motion } from "framer-motion";
 
 const languages = ['fr', 'en', 'mg']
 const languageLabels: Record<string, string> = {
@@ -40,20 +41,32 @@ export default function LanguageSwitcher({ isMobile = false }: { isMobile?: bool
         )}
       </button>
     
-      {open && (
-        <ul className={`absolute ${isMobile ? 'static mt-2' : 'right-0'} z-50 bg-white dark:bg-gray-900 shadow-lg rounded mt-2 p-2 text-sm`}>
-          {languages.map((lng) => (
-            <li
-              key={lng}
-              onClick={() => changeLanguage(lng)}
-              className={`cursor-pointer px-3 py-1 rounded dark:text-gray-100 text-slate-800 
-                hover:text-indigo-500 dark:hover:text-indigo-500 transition ${i18n.language === lng ? 'font-semibold' : ''}`}
-            >
-              {languageLabels[lng]}
-            </li>
-          ))}
-        </ul>
-      )}
+      <AnimatePresence>
+  {open && (
+    <motion.ul
+      initial={{ opacity: 0, scale: 0.95 }}
+      animate={{ opacity: 1, scale: 1 }}
+      exit={{ opacity: 0, scale: 0.95 }}
+      transition={{ duration: 0.2 }}
+      className={`absolute ${isMobile ? 'static mt-2' : 'right-0'}
+        z-50 bg-white dark:bg-gray-900 shadow-lg rounded mt-2 p-2 text-sm`}
+    >
+      {languages.map((lng) => (
+        <li
+          key={lng}
+          onClick={() => changeLanguage(lng)}
+          className={`cursor-pointer px-3 py-1 rounded dark:text-gray-100 text-slate-800 
+            hover:text-indigo-500 dark:hover:text-indigo-500 transition ${
+              i18n.language === lng ? 'font-semibold' : ''
+            }`}
+        >
+          {languageLabels[lng]}
+        </li>
+      ))}
+    </motion.ul>
+  )}
+</AnimatePresence>
+
     </div>
   )
 }

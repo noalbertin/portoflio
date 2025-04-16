@@ -32,11 +32,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body
+        className={`bg-white text-black dark:bg-gray-900 dark:text-white transition-colors duration-300 ${geistSans.variable} ${geistMono.variable}`}
+      >
         <Providers>
           {children}
         </Providers>
       </body>
+
     </html>
   );
 }

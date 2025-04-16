@@ -23,16 +23,19 @@ const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
   const [theme, setTheme] = useState<string>("light");
 
   const toggleTheme = () => {
+    const html = document.documentElement;
+  
     if (theme === "light") {
-      document.body.classList.remove("light");
-      document.body.classList.add("dark");
+      html.classList.remove("light");
+      html.classList.add("dark");
       setTheme("dark");
     } else {
-      document.body.classList.remove("dark");
-      document.body.classList.add("light");
+      html.classList.remove("dark");
+      html.classList.add("light");
       setTheme("light");
     }
   };
+  
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
