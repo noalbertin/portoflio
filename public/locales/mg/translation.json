@@ -34,7 +34,17 @@
         "dashboard": {
           "title": "Dashboard React Admin",
           "description": "Interface fitantanana amin'ny sary sy fidirana ho an'ny fikambanana FIMISA"
+        },
+        "Pvc": {
+          "title": "Pvc : Olana amin’ny làlan’ny mpivarotra",
+          "description": "Fitaovana hanatsarana sy hamahana ny olana amin’ny làlan’ny mpivarotra amin’ny alalan’ny algorithmika ho an’ny fandaminana fitsidihana tanàna."
+        },
+        "Pva": {
+          "title": "Pva : Fandaharam-potoana amin’ny Teboka Tombony",
+          "description": "Rindranasa fitantanana tetikasa mifototra amin’ny teboka tombony, manampy amin’ny fanaraha-maso ny fandrosoana sy ny zava-bitan’ny asa."
         }
+
+
       },
       "projets_": "Tetikasa vao haingana",
       "code": "Kaody",

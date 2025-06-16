@@ -24,6 +24,18 @@ const projects = [
     tech: ['React', 'Chart.js', 'Tailwind CSS'],
     github: 'https://github.com/noalbertin/app',
   },
+  {
+    title: 'projects.Pva.title',
+    description: 'projects.Pva.description',
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+    demo: 'https://pva-ro.vercel.app/',
+  },
+  {
+    title: 'projects.Pvc.title',
+    description: 'projects.Pvc.description',
+    tech: ['Next.js', 'React', 'Tailwind CSS'],
+    demo: 'https://pvc-three.vercel.app/',
+  },
 ]
 
 

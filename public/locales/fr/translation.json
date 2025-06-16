@@ -34,7 +34,17 @@
     "dashboard": {
       "title": "Dashboard React Admin",
       "description": "Interface d’administration avec graphiques et authentification pour l'association FIMISA"
+    },
+    "Pvc": {
+      "title": "Pvc : Problème du voyageur de commerce",
+      "description": "Outil d’optimisation permettant de résoudre le problème du voyageur de commerce (TSP) à l’aide d’algorithmes efficaces pour la planification des trajets."
+    },
+    "Pva": {
+      "title": "Pva : Programmation par Points de Valeur Ajoutée",
+      "description": "Application de gestion de projet basée sur les Points de Valeur Ajoutée (PVA), facilitant le suivi de la progression et des performances des tâches."
     }
+
+
   },
   "projets_": "Projets récents",
   "code": "Code",
