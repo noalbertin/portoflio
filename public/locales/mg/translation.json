@@ -42,6 +42,10 @@
         "Pva": {
           "title": "Pva : Fandaharam-potoana amin’ny Teboka Tombony",
           "description": "Rindranasa fitantanana tetikasa mifototra amin’ny teboka tombony, manampy amin’ny fanaraha-maso ny fandrosoana sy ny zava-bitan’ny asa."
+        },
+        "caterpillar": {
+          "title": "Caterpillar: Fanaraha-maso sy Fikojakojana ny Milina ao Tuléar",
+          "description": "Sehatra natokana ho an'ny fanaraha-maso sy fikojakojana fisorohana ny fitaovana indostrialy. Ahafahanao manara-maso ny ora fampiasana, ny fitsabahana, ary manatsara ny fisian'ny milina."
         }
 
 
@@ -51,7 +55,8 @@
       "demo": "Seho mivantana",
       "envoyer":"Alefa",
       "message_envoye": "Tafapetraka tsara ny hafatrao!",
-    "erreur_envoi": "Nisy olana nandefasana ny hafatra."
+    "erreur_envoi": "Nisy olana nandefasana ny hafatra.",
+    "job_title": "Mpamorona Fullstack JS"
     }
     
   

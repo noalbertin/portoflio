@@ -9,8 +9,6 @@ import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import Loader from "@/components/Loader";
 
-
-
 export default function Home() {
 
   const [isLoading, setIsLoading] = useState<boolean>(true);

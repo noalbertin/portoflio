@@ -42,7 +42,12 @@
     "Pva": {
       "title": "Pva : Programmation par Points de Valeur Ajoutée",
       "description": "Application de gestion de projet basée sur les Points de Valeur Ajoutée (PVA), facilitant le suivi de la progression et des performances des tâches."
+    },
+    "caterpillar": {
+      "title": "Caterpillar : Suivi & Maintenance des Machines à Tuléar",
+      "description": "Plateforme dédiée à la supervision et à la maintenance préventive des équipements industriels. Permet de suivre les heures d’utilisation, les interventions, et d’optimiser la disponibilité de la machine."
     }
+
 
 
   },
@@ -51,6 +56,7 @@
   "demo": "Démo",
   "envoyer":"Envoyer",
   "message_envoye": "Votre message a bien été envoyé !",
-  "erreur_envoi": "Erreur lors de l'envoi du message."
+  "erreur_envoi": "Erreur lors de l'envoi du message.",
+  "job_title": "Développeur Fullstack JS"
   }
   
