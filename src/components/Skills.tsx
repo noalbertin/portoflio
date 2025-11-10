@@ -1,6 +1,6 @@
 //components/Skills.tsx
 'use client'
-import { useTranslation, Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { motion } from 'framer-motion'
 import { FaReact, FaNodeJs, FaDatabase, FaHtml5, FaCss3Alt, FaJsSquare, FaGitAlt, FaPhp, FaJava } from 'react-icons/fa'
 import { SiTypescript, SiTailwindcss, SiMysql, SiNextdotjs  } from 'react-icons/si'

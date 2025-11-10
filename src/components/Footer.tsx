@@ -1,6 +1,6 @@
 //components/Footer.tsx
 'use client'
-import { useTranslation, Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
