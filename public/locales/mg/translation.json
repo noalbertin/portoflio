@@ -18,7 +18,7 @@
     "competences_phrase": "Talenta ara-teknolojia",
     "projets_phrase": "Tetikasa vao haingana",
     "contact_phrase": "Hifandraisako aminao",
-    "droit": " Zo rehetra voatokana.",
+    "droit": "Zo rehetra voatokana.",
     "email": "Mailaka",
     "message": "Hafatra",
     "nom": "Anarana",
@@ -47,16 +47,15 @@
           "title": "Caterpillar: Fanaraha-maso sy Fikojakojana ny Milina ao Tuléar",
           "description": "Sehatra natokana ho an'ny fanaraha-maso sy fikojakojana fisorohana ny fitaovana indostrialy. Ahafahanao manara-maso ny ora fampiasana, ny fitsabahana, ary manatsara ny fisian'ny milina."
         }
-
-
       },
       "projets_": "Tetikasa vao haingana",
       "code": "Kaody",
       "demo": "Seho mivantana",
       "envoyer":"Alefa",
       "message_envoye": "Tafapetraka tsara ny hafatrao!",
-    "erreur_envoi": "Nisy olana nandefasana ny hafatra.",
-    "job_title": "Mpamorona Fullstack JS"
+      "erreur_envoi": "Nisy olana nandefasana ny hafatra.",
+      "job_title": "Mpamorona Fullstack JS",
+      "envoi_en_cours": "Alefa..."
     }
     
   

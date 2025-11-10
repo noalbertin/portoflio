@@ -18,7 +18,7 @@
     "competences_phrase": "Technical skills",
     "projets_phrase": "Recent projects",
     "contact_phrase": "Contact me",
-    "droit": " All rights reserved.",
+    "droit": "All rights reserved.",
     "email": "Email",
     "message": "Message",
     "nom": "Name",
@@ -54,6 +54,7 @@
     "envoyer":"Send",
     "message_envoye": "Your message has been sent!",
     "erreur_envoi": "Error sending message.",
-    "job_title": "Fullstack JS Developer"
+    "job_title": "Fullstack JS Developer",
+    "envoi_en_cours": "Sending..."
   }
   

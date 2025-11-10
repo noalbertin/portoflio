@@ -3,10 +3,62 @@ import { NextRequest } from 'next/server'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-export async function POST(req: NextRequest) {
-  
-  const { name, email, message } = await req.json()
+// Fonction pour vérifier le token reCAPTCHA
+async function verifyRecaptcha(token: string): Promise<boolean> {
+  const secretKey = process.env.RECAPTCHA_SECRET_KEY
+
+  if (!secretKey) {
+    console.error('RECAPTCHA_SECRET_KEY non définie')
+    return false
+  }
+
   try {
+    const response = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      body: `secret=${secretKey}&response=${token}`,
+    })
+
+    const data = await response.json()
+    return data.success
+  } catch (error) {
+    console.error('Erreur lors de la vérification reCAPTCHA:', error)
+    return false
+  }
+}
+
+export async function POST(req: NextRequest) {
+  try {
+    const { name, email, message, recaptchaToken } = await req.json()
+
+    // Validation des champs
+    if (!name || !email || !message) {
+      return new Response(
+        JSON.stringify({ message: 'Tous les champs sont requis' }),
+        { status: 400 }
+      )
+    }
+
+    // Vérification du token reCAPTCHA
+    if (!recaptchaToken) {
+      return new Response(
+        JSON.stringify({ message: 'Token reCAPTCHA manquant' }),
+        { status: 400 }
+      )
+    }
+
+    const isValidRecaptcha = await verifyRecaptcha(recaptchaToken)
+    
+    if (!isValidRecaptcha) {
+      return new Response(
+        JSON.stringify({ message: 'Échec de la vérification reCAPTCHA. Veuillez réessayer.' }),
+        { status: 400 }
+      )
+    }
+
+    // Envoi de l'e-mail via Resend
     const { data, error } = await resend.emails.send({
       from: 'Contact <contact@resend.dev>',
       to: 'jeanneaurelle100@gmail.com',
@@ -42,16 +94,21 @@ export async function POST(req: NextRequest) {
     
     if (error) {
       console.error('Erreur Resend:', error)
-      return new Response(JSON.stringify({ message: 'Erreur lors de l’envoi de l’e-mail' }), {
-        status: 500
-      })
+      return new Response(
+        JSON.stringify({ message: 'Erreur lors de l’envoi de l’e-mail' }),
+        { status: 500 }
+      )
     }
 
-    return new Response(JSON.stringify({ message: 'Message envoyé', id: data?.id }), {
-      status: 200
-    })
+    return new Response(
+      JSON.stringify({ message: 'Message envoyé avec succès', id: data?.id }),
+      { status: 200 }
+    )
   } catch (err) {
     console.error('Erreur serveur:', err)
-    return new Response(JSON.stringify({ message: 'Erreur serveur' }), { status: 500 })
+    return new Response(
+      JSON.stringify({ message: 'Erreur serveur' }),
+      { status: 500 }
+    )
   }
 }

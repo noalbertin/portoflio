@@ -18,7 +18,7 @@
     "competences_phrase": "Compétences techniques",
     "projets_phrase": "Projets récents",
     "contact_phrase": "Me contacter",
-    "droit": " Tous droits réservés.",
+    "droit": "Tous droits réservés.",
     "email": "Email",
     "message": "Message",
     "nom": "Nom",
@@ -47,9 +47,6 @@
       "title": "Caterpillar : Suivi & Maintenance des Machines à Tuléar",
       "description": "Plateforme dédiée à la supervision et à la maintenance préventive des équipements industriels. Permet de suivre les heures d’utilisation, les interventions, et d’optimiser la disponibilité de la machine."
     }
-
-
-
   },
   "projets_": "Projets récents",
   "code": "Code",
@@ -57,6 +54,7 @@
   "envoyer":"Envoyer",
   "message_envoye": "Votre message a bien été envoyé !",
   "erreur_envoi": "Erreur lors de l'envoi du message.",
-  "job_title": "Développeur Fullstack JS"
+  "job_title": "Développeur Fullstack JS",
+  "envoi_en_cours": "Envoi en cours..."
   }
   

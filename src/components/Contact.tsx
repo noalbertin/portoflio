@@ -1,168 +1,11 @@
-// //components/Contact.tsx
-// 'use client'
-
-// import { useTranslation, Trans } from 'react-i18next'
-// import { useState, useEffect } from 'react'
-// import { motion } from 'framer-motion'
-// import toast from 'react-hot-toast'
-
-// export default function Contact() {
-//   const { t } = useTranslation()
-//   const [name, setName] = useState('')
-//   const [email, setEmail] = useState('')
-//   const [message, setMessage] = useState('')
-//   const [isFormValid, setIsFormValid] = useState(false)
-
-//   useEffect(() => {
-//     setIsFormValid(name.trim() !== '' && email.trim() !== '' && message.trim() !== '')
-//   }, [name, email, message])
-
-//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault()
-
-//     const data = { name, email, message }
-
-//     try {
-//       const res = await fetch('/api/contact', {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify(data),
-//       })
-
-
-//       if (res.ok) {
-
-//         toast.success(t('message_envoye'), {
-//           icon: '✔️',
-//           style: {
-//             background: '#22c55e',
-//             color: 'white',
-//             borderRadius: '8px',
-//             padding: '12px 16px',
-//             fontWeight: 'bold',
-//           },
-//         })
-//         setName('')
-//         setEmail('')
-//         setMessage('')
-//       } else {
-//         toast.error(t('erreur_envoi'))
-//       }
-//      } catch {
-//       toast.error(t('erreur_envoi'))
-//     }
-//   }
-
-
-  
-
-//   return (
-//     <section
-//       id={t('anchor.contact')}
-//       className="min-h-screen flex flex-col justify-center items-center px-4 py-20 bg-white dark:bg-gray-900"
-//     >
-//       <motion.div
-//         initial={{ opacity: 0, y: 50 }}
-//         whileInView={{ opacity: 1, y: 0 }}
-//         transition={{ duration: 0.6 }}
-//         viewport={{ once: true }}
-//         className="w-full max-w-2xl text-center"
-//       >
-//         <h2 className="text-3xl sm:text-4xl font-bold text-indigo-600 mb-8">
-//           <Trans i18nKey="contact_phrase" />
-//         </h2>
-
-//         <form onSubmit={handleSubmit} className="space-y-8 text-left">
-
-//           {/* Floating label: Nom */}
-//           <div className="relative">
-//             <input
-//               type="text"
-//               name="name"
-//               id="name"
-//               required
-//               value={name}
-//               onChange={(e) => setName(e.target.value)}
-//               className="peer w-full px-4 pt-6 pb-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
-//               placeholder="Nom"
-//             />
-//             <label
-//               htmlFor="name"
-//               className="absolute left-4 top-2 text-gray-500 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 dark:peer-placeholder-shown:text-gray-300 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600"
-//             >
-//               <Trans i18nKey="nom" />
-//             </label>
-//           </div>
-
-//           {/* Floating label: Email */}
-//           <div className="relative">
-//             <input
-//               type="email"
-//               name="email"
-//               id="email"
-//               required
-//               value={email}
-//               onChange={(e) => setEmail(e.target.value)}
-//               className="peer w-full px-4 pt-6 pb-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
-//               placeholder="Email"
-//             />
-//             <label
-//               htmlFor="email"
-//               className="absolute left-4 top-2 text-gray-500 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 dark:peer-placeholder-shown:text-gray-300 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600"
-//             >
-//               <Trans i18nKey="email" />
-//             </label>
-//           </div>
-
-//           {/* Floating label: Message */}
-//           <div className="relative">
-//             <textarea
-//               name="message"
-//               id="message"
-//               rows={5}
-//               required
-//               value={message}
-//               onChange={(e) => setMessage(e.target.value)}
-//               className="peer w-full px-4 pt-6 pb-2 rounded-lg border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500"
-//               placeholder="Message"
-//             ></textarea>
-//             <label
-//               htmlFor="message"
-//               className="absolute left-4 top-2 text-gray-500 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-700 dark:peer-placeholder-shown:text-gray-300 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600"
-//             >
-//               <Trans i18nKey="message" />
-//             </label>
-//           </div>
-
-//           <button
-//             type="submit"
-//             disabled={!isFormValid}
-//             className={`px-6 py-2 rounded-lg transition ${
-//               isFormValid
-//                 ? 'bg-indigo-600 text-white hover:bg-indigo-700'
-//                 : 'bg-gray-400 text-white cursor-not-allowed'
-//             }`}
-//           >
-//             <Trans i18nKey="envoyer" />
-//           </button>
-//         </form>
-//       </motion.div>
-//     </section>
-
-//   )
-// }
-
-
-
 //components/Contact.tsx
 'use client'
 
 import { useTranslation, Trans } from 'react-i18next'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { motion } from 'framer-motion'
 import toast from 'react-hot-toast'
+import ReCAPTCHA from 'react-google-recaptcha'
 
 export default function Contact() {
   const { t } = useTranslation()
@@ -170,17 +13,36 @@ export default function Contact() {
   const [email, setEmail] = useState('')
   const [message, setMessage] = useState('')
   const [isFormValid, setIsFormValid] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [recaptchaValue, setRecaptchaValue] = useState<string | null>(null)
+  const recaptchaRef = useRef<ReCAPTCHA>(null)
 
   useEffect(() => {
-    setIsFormValid(name.trim() !== '' && email.trim() !== '' && message.trim() !== '')
-  }, [name, email, message])
+    setIsFormValid(
+      name.trim() !== '' && 
+      email.trim() !== '' && 
+      message.trim() !== '' && 
+      recaptchaValue !== null
+    )
+  }, [name, email, message, recaptchaValue])
+
+  const handleRecaptchaChange = (value: string | null) => {
+    setRecaptchaValue(value)
+  }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
+    
+    if (!recaptchaValue) {
+      toast.error(t('erreur_recaptcha') || 'Veuillez valider le reCAPTCHA')
+      return
+    }
 
-    const data = { name, email, message }
+    setIsSubmitting(true)
 
     try {
+      const data = { name, email, message, recaptchaToken: recaptchaValue }
+
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: {
@@ -203,11 +65,17 @@ export default function Contact() {
         setName('')
         setEmail('')
         setMessage('')
+        setRecaptchaValue(null)
+        recaptchaRef.current?.reset()
       } else {
-        toast.error(t('erreur_envoi'))
+        const errorData = await res.json()
+        toast.error(errorData.message || t('erreur_envoi'))
       }
-    } catch {
+    } catch (error) {
+      console.error('Erreur:', error)
       toast.error(t('erreur_envoi'))
+    } finally {
+      setIsSubmitting(false)
     }
   }
 
@@ -357,19 +225,29 @@ export default function Contact() {
                 </label>
               </motion.div>
 
+              {/* reCAPTCHA v2 visible (checkbox) */}
+              <div className="flex justify-center">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
+                  onChange={handleRecaptchaChange}
+                  theme="light"
+                />
+              </div>
+
               {/* Bouton d'envoi */}
               <motion.button
                 type="submit"
-                disabled={!isFormValid}
-                whileHover={isFormValid ? { scale: 1.02, boxShadow: "0 0 30px rgba(99, 102, 241, 0.5)" } : {}}
-                whileTap={isFormValid ? { scale: 0.98 } : {}}
+                disabled={!isFormValid || isSubmitting}
+                whileHover={isFormValid && !isSubmitting ? { scale: 1.02, boxShadow: "0 0 30px rgba(99, 102, 241, 0.5)" } : {}}
+                whileTap={isFormValid && !isSubmitting ? { scale: 0.98 } : {}}
                 className={`relative w-full px-8 py-4 rounded-xl font-semibold text-white overflow-hidden shadow-xl transition-all ${
-                  isFormValid
+                  isFormValid && !isSubmitting
                     ? 'bg-gradient-to-r from-indigo-600 to-purple-600 border border-white/10 cursor-pointer'
                     : 'bg-gray-600/50 border border-white/5 cursor-not-allowed'
                 }`}
               >
-                {isFormValid && (
+                {isFormValid && !isSubmitting && (
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
                     initial={{ x: "-100%" }}
@@ -378,7 +256,19 @@ export default function Contact() {
                   />
                 )}
                 <span className="relative z-10 flex items-center justify-center gap-2">
-                  <Trans i18nKey="envoyer" />
+                  {isSubmitting ? (
+                    <>
+                      <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
+                      </svg>
+                      <span>{t('envoi_en_cours')}</span>
+                    </>
+                  ) : (
+                    <>
+                      <Trans i18nKey="envoyer" />
+                    </>
+                  )}
                 </span>
               </motion.button>
             </form>
