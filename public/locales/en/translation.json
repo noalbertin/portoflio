@@ -12,8 +12,8 @@
     },
     
     "langue": "English",
-    "intro1": "I am a Master's student at <1>École Nationale d'Informatique (ENI), Fianarantsoa</1> and a passionate <2>full stack</2> web developer who loves creating high-performance, scalable, and modern applications. I enjoy building elegant frontend interfaces as much as designing robust backend APIs.",
-    "intro2": "My favorite stack includes technologies like <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. I'm constantly learning, testing new tools, and improving my skills to deliver clean, maintainable, and efficient code.",
+    "intro1": "I am a second-year master's student at <1>École Nationale d'Informatique (ENI), Fianarantsoa</1> and a passionate <2>full stack</2> web developer who loves creating high-performance, scalable, and modern applications. I enjoy building elegant frontend interfaces as much as designing robust backend APIs.",
+    "intro2": "My favorite stack includes technologies like <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express</1>. I'm constantly learning, testing new tools, and improving my skills to deliver clean, maintainable, and efficient code.",
     "download_cv": "Download my CV",
     "competences_phrase": "Technical skills",
     "projets_phrase": "Recent projects",
@@ -44,9 +44,21 @@
         "description": "Application de gestion de projet basée sur les points de valeur ajoutée (PVA), permettant un suivi précis des performances et de l'avancement des tâches."
       },
       "caterpillar": {
-        "title": "Caterpillar: Monitoring & Maintenance of Machines in Tuléar",
+        "title": "Caterpillar: Monitoring & Maintenance of Machines",
         "description": "Platform dedicated to the supervision and preventive maintenance of industrial equipment. Allows you to track usage hours, maintenance interventions, and optimize machine availability." 
-      }
+      },
+      "sinistre": {
+      "title": "Insurance Claims Management – ARO Toliara",
+      "description": "Analysis and tracking of insurance claims, verification of supporting documents, and implementation of an audit system to trace and monitor user actions in the database."
+    },
+    "scolarite": {
+      "title": "Student Administrative Documents Management",
+      "description": "Web application allowing students to submit online requests for administrative documents such as transcripts, certificates of enrollment, and school attestations."
+    },
+    "mobile": {
+      "title": "Mobile App – Operations Research",
+      "description": "Android application for solving scheduling problems (CPM, MPM, Gantt, Table), maximum flow, and transportation optimization."
+    }
     },
     "projets_": "Recent Projects",
     "code": "Source",
@@ -54,7 +66,7 @@
     "envoyer":"Send",
     "message_envoye": "Your message has been sent!",
     "erreur_envoi": "Error sending message.",
-    "job_title": "Fullstack JS Developer",
+    "job_title": "Full-Stack Developer",
     "envoi_en_cours": "Sending..."
   }
   

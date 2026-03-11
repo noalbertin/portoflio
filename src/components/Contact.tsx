@@ -19,9 +19,9 @@ export default function Contact() {
 
   useEffect(() => {
     setIsFormValid(
-      name.trim() !== '' && 
-      email.trim() !== '' && 
-      message.trim() !== '' && 
+      name.trim() !== '' &&
+      email.trim() !== '' &&
+      message.trim() !== '' &&
       recaptchaValue !== null
     )
   }, [name, email, message, recaptchaValue])
@@ -32,25 +32,18 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
-    
     if (!recaptchaValue) {
       toast.error(t('erreur_recaptcha') || 'Veuillez valider le reCAPTCHA')
       return
     }
-
     setIsSubmitting(true)
-
     try {
       const data = { name, email, message, recaptchaToken: recaptchaValue }
-
       const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       })
-
       if (res.ok) {
         toast.success(t('message_envoye'), {
           icon: '✔️',
@@ -79,14 +72,17 @@ export default function Contact() {
     }
   }
 
+  // Shared input classes
+  const inputBase =
+    'peer relative w-full px-4 pt-6 pb-2 rounded-lg border bg-white/60 dark:bg-white/5 text-slate-800 dark:text-white placeholder-transparent focus:outline-none focus:ring-2 focus:border-transparent transition-all border-slate-200 dark:border-white/20 focus:ring-indigo-500'
+
   return (
     <section
       id={t('anchor.contact')}
-      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20 transition-colors duration-300"
     >
-      {/* Background avec gradient animé */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900">
-        {/* Particules flottantes */}
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-indigo-50 to-slate-100 dark:from-slate-950 dark:via-indigo-950 dark:to-slate-900 transition-colors duration-300">
         {Array.from({ length: 20 }, (_, i) => (
           <motion.div
             key={i}
@@ -106,9 +102,7 @@ export default function Contact() {
             }}
           />
         ))}
-        
-        {/* Mesh gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-cyan-500/10 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-indigo-500/5 to-cyan-500/5 dark:from-purple-500/10 dark:via-indigo-500/10 dark:to-cyan-500/10 animate-pulse" />
       </div>
 
       <motion.div
@@ -119,8 +113,8 @@ export default function Contact() {
         className="relative z-10 w-full max-w-2xl"
       >
         {/* Titre */}
-        <motion.h2 
-          className="text-4xl sm:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent"
+        <motion.h2
+          className="text-4xl sm:text-5xl font-bold text-center mb-12 bg-gradient-to-r from-slate-800 via-indigo-700 to-purple-700 dark:from-white dark:via-indigo-200 dark:to-purple-200 bg-clip-text text-transparent"
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -138,25 +132,26 @@ export default function Contact() {
           className="relative"
         >
           {/* Glow effect */}
-          <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-20" />
-          
+          <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 rounded-2xl blur-xl opacity-10 dark:opacity-20" />
+
           {/* Card */}
-          <div className="relative p-8 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-2xl">
-            {/* Cercles décoratifs comme terminal */}
+          <div className="relative p-8 bg-white/70 dark:bg-white/5 backdrop-blur-md rounded-2xl border border-slate-200/80 dark:border-white/10 shadow-md dark:shadow-2xl transition-colors duration-300">
+            {/* Cercles décoratifs */}
             <div className="absolute top-6 left-6 flex space-x-2">
-              <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
-              <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-              <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-red-400/80 dark:bg-red-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-yellow-400/80 dark:bg-yellow-500/60"></div>
+              <div className="w-3 h-3 rounded-full bg-green-400/80 dark:bg-green-500/60"></div>
             </div>
 
             <form onSubmit={handleSubmit} className="mt-8 space-y-6">
-              {/* Floating label: Nom */}
-              <motion.div 
+
+              {/* Nom */}
+              <motion.div
                 className="relative group"
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-lg blur opacity-0 group-hover:opacity-15 dark:group-hover:opacity-20 transition-opacity" />
                 <input
                   type="text"
                   name="name"
@@ -164,24 +159,24 @@ export default function Contact() {
                   required
                   value={name}
                   onChange={(e) => setName(e.target.value)}
-                  className="peer relative w-full px-4 pt-6 pb-2 rounded-lg border border-white/20 bg-white/5 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent transition-all"
+                  className={inputBase}
                   placeholder="Nom"
                 />
                 <label
                   htmlFor="name"
-                  className="absolute left-4 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-400"
+                  className="absolute left-4 top-2 text-slate-400 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 dark:peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-indigo-600 dark:peer-focus:text-indigo-400"
                 >
                   <Trans i18nKey="nom" />
                 </label>
               </motion.div>
 
-              {/* Floating label: Email */}
-              <motion.div 
+              {/* Email */}
+              <motion.div
                 className="relative group"
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-500 to-pink-500 rounded-lg blur opacity-0 group-hover:opacity-15 dark:group-hover:opacity-20 transition-opacity" />
                 <input
                   type="email"
                   name="email"
@@ -189,24 +184,24 @@ export default function Contact() {
                   required
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="peer relative w-full px-4 pt-6 pb-2 rounded-lg border border-white/20 bg-white/5 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all"
+                  className={`${inputBase} focus:ring-purple-500`}
                   placeholder="Email"
                 />
                 <label
                   htmlFor="email"
-                  className="absolute left-4 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-purple-400"
+                  className="absolute left-4 top-2 text-slate-400 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 dark:peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-purple-600 dark:peer-focus:text-purple-400"
                 >
                   <Trans i18nKey="email" />
                 </label>
               </motion.div>
 
-              {/* Floating label: Message */}
-              <motion.div 
+              {/* Message */}
+              <motion.div
                 className="relative group"
                 whileHover={{ scale: 1.01 }}
                 transition={{ type: "spring", stiffness: 300 }}
               >
-                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-20 transition-opacity" />
+                <div className="absolute -inset-0.5 bg-gradient-to-r from-cyan-500 to-blue-500 rounded-lg blur opacity-0 group-hover:opacity-15 dark:group-hover:opacity-20 transition-opacity" />
                 <textarea
                   name="message"
                   id="message"
@@ -214,18 +209,18 @@ export default function Contact() {
                   required
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
-                  className="peer relative w-full px-4 pt-6 pb-2 rounded-lg border border-white/20 bg-white/5 text-white placeholder-transparent focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent transition-all resize-none"
+                  className={`${inputBase} focus:ring-cyan-500 resize-none`}
                   placeholder="Message"
                 ></textarea>
                 <label
                   htmlFor="message"
-                  className="absolute left-4 top-2 text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-cyan-400"
+                  className="absolute left-4 top-2 text-slate-400 dark:text-gray-400 text-sm transition-all peer-placeholder-shown:top-4 peer-placeholder-shown:text-base peer-placeholder-shown:text-slate-400 dark:peer-placeholder-shown:text-gray-500 peer-focus:top-2 peer-focus:text-sm peer-focus:text-cyan-600 dark:peer-focus:text-cyan-400"
                 >
                   <Trans i18nKey="message" />
                 </label>
               </motion.div>
 
-              {/* reCAPTCHA v2 visible (checkbox) */}
+              {/* reCAPTCHA */}
               <div className="flex justify-center">
                 <ReCAPTCHA
                   ref={recaptchaRef}
@@ -239,12 +234,12 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={!isFormValid || isSubmitting}
-                whileHover={isFormValid && !isSubmitting ? { scale: 1.02, boxShadow: "0 0 30px rgba(99, 102, 241, 0.5)" } : {}}
+                whileHover={isFormValid && !isSubmitting ? { scale: 1.02, boxShadow: "0 0 30px rgba(99, 102, 241, 0.4)" } : {}}
                 whileTap={isFormValid && !isSubmitting ? { scale: 0.98 } : {}}
                 className={`relative w-full px-8 py-4 rounded-xl font-semibold text-white overflow-hidden shadow-xl transition-all ${
                   isFormValid && !isSubmitting
-                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 border border-white/10 cursor-pointer'
-                    : 'bg-gray-600/50 border border-white/5 cursor-not-allowed'
+                    ? 'bg-gradient-to-r from-indigo-600 to-purple-600 border border-indigo-400/20 dark:border-white/10 cursor-pointer'
+                    : 'bg-slate-300 dark:bg-gray-600/50 border border-slate-300/50 dark:border-white/5 cursor-not-allowed text-slate-500 dark:text-gray-400'
                 }`}
               >
                 {isFormValid && !isSubmitting && (
@@ -265,9 +260,7 @@ export default function Contact() {
                       <span>{t('envoi_en_cours')}</span>
                     </>
                   ) : (
-                    <>
-                      <Trans i18nKey="envoyer" />
-                    </>
+                    <Trans i18nKey="envoyer" />
                   )}
                 </span>
               </motion.button>
@@ -276,8 +269,8 @@ export default function Contact() {
         </motion.div>
       </motion.div>
 
-      {/* Grille décorative en arrière-plan */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
+      {/* Grille décorative */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.04)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_50%,#000_60%,transparent_100%)]" />
     </section>
   )
 }

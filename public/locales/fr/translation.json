@@ -12,8 +12,8 @@
     },
     
     "langue": "Français",
-    "intro1": "Je suis un étudiant en Master à l’<1>École Nationale d'Informatique (ENI), Fianarantsoa</1> et un développeur web <2>full stack</2> passionné par la création d'applications performantes, scalables et modernes. J'aime autant développer des interfaces frontend élégantes que concevoir des API robustes côté backend.",
-    "intro2": "Mon stack préféré inclut des technologies comme <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express, MySQL</1>. Je suis constamment en train d'apprendre, de tester de nouveaux outils et d'améliorer mes compétences pour livrer du code propre, maintenable et efficace.",
+    "intro1": "Je suis un étudiant en Master 2 à l’<1>École Nationale d'Informatique (ENI), Fianarantsoa</1> et un développeur web <2>full stack</2> passionné par la création d'applications performantes, scalables et modernes. J'aime autant développer des interfaces frontend élégantes que concevoir des API robustes côté backend.",
+    "intro2": "Mon stack préféré inclut des technologies comme <1>React, Next.js, Tailwind CSS, Node.js, TypeScript, Express</1>. Je suis constamment en train d'apprendre, de tester de nouveaux outils et d'améliorer mes compétences pour livrer du code propre, maintenable et efficace.",
     "download_cv": "Télécharger mon CV",
     "competences_phrase": "Compétences techniques",
     "projets_phrase": "Projets récents",
@@ -44,8 +44,20 @@
       "description": "Application de gestion de projet basée sur les Points de Valeur Ajoutée (PVA), facilitant le suivi de la progression et des performances des tâches."
     },
     "caterpillar": {
-      "title": "Caterpillar : Suivi & Maintenance des Machines à Tuléar",
+      "title": "Caterpillar : Suivi & Maintenance des Machines",
       "description": "Plateforme dédiée à la supervision et à la maintenance préventive des équipements industriels. Permet de suivre les heures d’utilisation, les interventions, et d’optimiser la disponibilité de la machine."
+    },
+    "sinistre": {
+      "title": "Gestion des sinistres – Assurance ARO Toliara",
+      "description": "Analyse et suivi des dossiers de sinistres, vérification des pièces justificatives et mise en place d'un système d'audit permettant de tracer et contrôler les actions des utilisateurs dans la base de données."
+    },
+    "scolarite": {
+      "title": "Gestion des documents administratifs de la scolarité",
+      "description": "Application web permettant aux étudiants d'effectuer des demandes de documents administratifs en ligne : relevé de notes, attestations et certificat de scolarité."
+    },
+    "mobile": {
+      "title": "Application mobile – Recherche Opérationnelle",
+      "description": "Application Android permettant la résolution de problèmes d'ordonnancement (CPM, MPM, Gantt, Tableau), de flot maximal et de transport."
     }
   },
   "projets_": "Projets récents",
@@ -54,7 +66,7 @@
   "envoyer":"Envoyer",
   "message_envoye": "Votre message a bien été envoyé !",
   "erreur_envoi": "Erreur lors de l'envoi du message.",
-  "job_title": "Développeur Fullstack JS",
+  "job_title": "Développeur Full-Stack",
   "envoi_en_cours": "Envoi en cours..."
   }
   

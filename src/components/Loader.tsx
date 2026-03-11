@@ -7,8 +7,8 @@ import { motion } from "framer-motion";
 const Loader: React.FC = () => {
   return (
     <div className="fixed inset-0 z-50 flex flex-col items-center justify-center overflow-hidden">
-      {/* Background avec gradient animé */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-amber-50 to-slate-100 dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 transition-colors duration-300">
         {/* Particules flottantes dorées */}
         {Array.from({ length: 20 }, (_, i) => (
           <motion.div
@@ -30,22 +30,22 @@ const Loader: React.FC = () => {
             }}
           />
         ))}
-        
+
         {/* Mesh gradient overlay doré */}
-        <div className="absolute inset-0 bg-gradient-to-r from-amber-900/10 via-yellow-800/10 to-amber-900/10 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-amber-400/5 via-yellow-400/5 to-amber-400/5 dark:from-amber-900/10 dark:via-yellow-800/10 dark:to-amber-900/10 animate-pulse" />
       </div>
 
-      {/* Logo simple avec bounce */}
+      {/* Logo avec bounce */}
       <div className="relative z-10">
-        <img 
-          src="/logo.png" 
-          alt="Logo" 
-          className="w-50 h-50 animate-bounce mb-4" 
+        <img
+          src="/logo.png"
+          alt="Logo"
+          className="w-50 h-50 animate-bounce mb-4"
         />
       </div>
 
-      {/* Grille décorative en arrière-plan */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_50%,transparent_100%)]" />
+      {/* Grille décorative */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.04)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,#000_50%,transparent_100%)]" />
     </div>
   );
 };

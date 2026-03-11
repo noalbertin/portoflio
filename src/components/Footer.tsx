@@ -7,10 +7,10 @@ import { motion } from 'framer-motion'
 
 export default function Footer() {
   const { t } = useTranslation()
-  
+
   return (
-    <footer className="relative bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 text-gray-200 py-8 border-t border-white/10 overflow-hidden">
-      {/* Particules flottantes subtiles */}
+    <footer className="relative bg-gradient-to-br from-slate-100 via-indigo-50 to-slate-100 dark:from-slate-950 dark:via-indigo-950 dark:to-slate-900 text-slate-600 dark:text-gray-200 py-8 border-t border-slate-200/60 dark:border-white/10 overflow-hidden transition-colors duration-300">
+      {/* Particules flottantes */}
       {Array.from({ length: 10 }, (_, i) => (
         <motion.div
           key={i}
@@ -33,7 +33,8 @@ export default function Footer() {
 
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-          {/* Logo avec effet glow */}
+          
+          {/* Logo */}
           <motion.div
             className="flex items-center gap-3 group"
             initial={{ opacity: 0, x: -20 }}
@@ -65,13 +66,13 @@ export default function Footer() {
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
           >
-            <p className="text-sm font-medium text-gray-300">
-              <span className="bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+            <p className="text-sm font-medium text-slate-600 dark:text-gray-300">
+              <span className="bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text text-transparent font-semibold">
                 &copy; {new Date().getFullYear()}
               </span>{' '}
               Nirindrainy Sylvano Albertin
             </p>
-            <p className="text-xs text-gray-400 mt-1">
+            <p className="text-xs text-slate-400 dark:text-gray-400 mt-1">
               {t('droit')}
             </p>
           </motion.div>
@@ -92,10 +93,8 @@ export default function Footer() {
               whileHover={{ scale: 1.15, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                className="absolute -inset-2 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full blur opacity-0 group-hover:opacity-40 transition-opacity duration-300"
-              />
-              <FaGithub className="relative text-gray-400 group-hover:text-white transition-colors duration-300" />
+              <motion.div className="absolute -inset-2 bg-gradient-to-r from-gray-600 to-gray-800 rounded-full blur opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
+              <FaGithub className="relative text-slate-400 dark:text-gray-400 group-hover:text-slate-800 dark:group-hover:text-white transition-colors duration-300" />
             </motion.a>
 
             <motion.a
@@ -106,17 +105,15 @@ export default function Footer() {
               whileHover={{ scale: 1.15, y: -3 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-0 group-hover:opacity-40 transition-opacity duration-300"
-              />
-              <FaLinkedin className="relative text-gray-400 group-hover:text-blue-400 transition-colors duration-300" />
+              <motion.div className="absolute -inset-2 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-full blur opacity-0 group-hover:opacity-40 transition-opacity duration-300" />
+              <FaLinkedin className="relative text-slate-400 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-300" />
             </motion.a>
           </motion.div>
         </div>
 
-        {/* Ligne décorative en bas */}
+        {/* Ligne décorative */}
         <motion.div
-          className="mt-6 h-px bg-gradient-to-r from-transparent via-indigo-500/50 to-transparent"
+          className="mt-6 h-px bg-gradient-to-r from-transparent via-indigo-400/40 dark:via-indigo-500/50 to-transparent"
           initial={{ scaleX: 0 }}
           whileInView={{ scaleX: 1 }}
           transition={{ duration: 0.8, delay: 0.3 }}
@@ -124,8 +121,8 @@ export default function Footer() {
         />
       </div>
 
-      {/* Grille décorative subtile */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px]" />
+      {/* Grille décorative */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.03)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.01)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.01)_1px,transparent_1px)] bg-[size:30px_30px]" />
     </footer>
   )
 }

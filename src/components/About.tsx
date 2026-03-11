@@ -12,17 +12,17 @@ export default function About() {
     target: containerRef,
     offset: ["start end", "end start"]
   })
-  
+
   const y = useTransform(scrollYProgress, [0, 1], [-100, 100])
   const opacity = useTransform(scrollYProgress, [0, 0.2, 0.8, 1], [0, 1, 1, 0])
-  
+
   const title = t('job_title')
-  
+
   const letterVariants = {
     hidden: { opacity: 0, y: 50, rotateX: -90 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
+    visible: {
+      opacity: 1,
+      y: 0,
       rotateX: 0,
       transition: {
         type: "spring",
@@ -58,15 +58,15 @@ export default function About() {
     <section
       ref={containerRef}
       id={t('anchor.apropos')}
-      className="relative min-h-screen flex items-center justify-center mt-12 lg:mt-8 px-4 py-20"
+      className="relative min-h-screen flex items-center justify-center mt-12 lg:mt-8 px-4 py-20 transition-colors duration-300"
     >
-      {/* Background avec gradient animé */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-purple-950 to-slate-900">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-100 via-indigo-50 to-slate-100 dark:from-slate-950 dark:via-purple-950 dark:to-slate-900 transition-colors duration-300">
         {/* Particules flottantes */}
         {Array.from({ length: 20 }, (_, i) => (
           <motion.div
             key={i}
-            className="absolute w-1 h-1 bg-white/20 rounded-full"
+            className="absolute w-1 h-1 bg-indigo-400/30 dark:bg-white/20 rounded-full"
             style={{
               left: `${Math.random() * 100}%`,
               top: `${Math.random() * 100}%`,
@@ -82,20 +82,20 @@ export default function About() {
             }}
           />
         ))}
-        
+
         {/* Mesh gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/10 via-purple-500/10 to-cyan-500/10 animate-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/5 via-purple-500/5 to-cyan-500/5 dark:from-indigo-500/10 dark:via-purple-500/10 dark:to-cyan-500/10 animate-pulse" />
       </div>
 
-      <motion.div 
+      <motion.div
         style={{ opacity }}
         className="relative z-10 w-full mx-auto lg:px-8"
       >
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-          
+
           {/* Colonne gauche: Photo et Nom/Titre */}
-          <div className="flex flex-col items-center  text-center  space-y-8">
-            
+          <div className="flex flex-col items-center text-center space-y-8">
+
             {/* Photo */}
             <motion.div
               initial={{ opacity: 0, scale: 0.8 }}
@@ -105,30 +105,27 @@ export default function About() {
               className="flex-shrink-0"
             >
               <div className="relative group">
-                {/* Halo lumineux animé */}
                 <motion.div
                   variants={floatingVariants}
                   animate="animate"
-                  className="absolute -inset-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"
+                  className="absolute -inset-4 bg-gradient-to-r from-indigo-500 via-purple-500 to-cyan-500 rounded-full blur-2xl opacity-20 dark:opacity-30 group-hover:opacity-40 dark:group-hover:opacity-50 transition-opacity duration-500"
                 />
-                
-                {/* Cercles décoratifs */}
+
                 <motion.div
                   animate={{ rotate: 360 }}
                   transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-4 border border-indigo-500/20 rounded-full"
+                  className="absolute -inset-4 border border-indigo-400/30 dark:border-indigo-500/20 rounded-full"
                 />
                 <motion.div
                   animate={{ rotate: -360 }}
                   transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                  className="absolute -inset-6 border border-purple-500/15 rounded-full"
+                  className="absolute -inset-6 border border-purple-400/20 dark:border-purple-500/15 rounded-full"
                 />
-                
-                {/* Image ronde - taille moyenne */}
+
                 <motion.div
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300, damping: 30 }}
-                  className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-white/20 shadow-2xl backdrop-blur-sm bg-white/5"
+                  className="relative w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 rounded-full overflow-hidden border-2 border-indigo-200/50 dark:border-white/20 shadow-2xl backdrop-blur-sm bg-white/10 dark:bg-white/5"
                 >
                   <Image
                     src="/sary.png"
@@ -138,9 +135,7 @@ export default function About() {
                     sizes="(max-width: 640px) 192px, (max-width: 1024px) 224px, 256px"
                     priority
                   />
-                  
-                  {/* Overlay gradient subtil */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/20 via-transparent to-purple-900/20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/10 dark:from-indigo-900/20 via-transparent to-purple-900/10 dark:to-purple-900/20" />
                 </motion.div>
               </div>
             </motion.div>
@@ -153,23 +148,22 @@ export default function About() {
               viewport={{ once: true }}
               className="space-y-4"
             >
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-white via-indigo-200 to-purple-200 bg-clip-text text-transparent leading-tight">
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-slate-800 via-indigo-700 to-purple-700 dark:from-white dark:via-indigo-200 dark:to-purple-200 bg-clip-text text-transparent leading-tight">
                 Nirindrainy Sylvano Albertin
               </h2>
-              
-              {/* Titre animé lettre par lettre */}
+
               <motion.div
                 variants={containerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
-                className="text-xl sm:text-2xl font-light text-indigo-300/90"
+                className="text-xl sm:text-2xl font-light text-indigo-600/80 dark:text-indigo-300/90"
               >
                 {title.split('').map((letter, index) => (
                   <motion.span
                     key={index}
                     variants={letterVariants}
-                    className="inline-block hover:text-white transition-colors duration-200 cursor-default"
+                    className="inline-block hover:text-indigo-800 dark:hover:text-white transition-colors duration-200 cursor-default"
                     whileHover={{ scale: 1.1, rotateZ: Math.random() * 10 - 5 }}
                   >
                     {letter === ' ' ? '\u00A0' : letter}
@@ -177,8 +171,6 @@ export default function About() {
                 ))}
               </motion.div>
             </motion.div>
-
-            
           </div>
 
           {/* Colonne droite: Texte descriptif */}
@@ -193,14 +185,14 @@ export default function About() {
               viewport={{ once: true }}
               className="w-full"
             >
-              <div className="relative p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-white/10 shadow-xl">
+              <div className="relative p-8 rounded-2xl bg-white/60 dark:bg-white/5 backdrop-blur-md border border-slate-200/80 dark:border-white/10 shadow-xl transition-colors duration-300">
                 <div className="absolute top-6 left-6 flex space-x-2">
-                  <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
-                  <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-                  <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
+                  <div className="w-3 h-3 rounded-full bg-red-400/80 dark:bg-red-500/60"></div>
+                  <div className="w-3 h-3 rounded-full bg-yellow-400/80 dark:bg-yellow-500/60"></div>
+                  <div className="w-3 h-3 rounded-full bg-green-400/80 dark:bg-green-500/60"></div>
                 </div>
-                
-                <div className="mt-8 space-y-6 text-gray-200 leading-relaxed">
+
+                <div className="mt-8 space-y-6 text-slate-700 dark:text-gray-200 leading-relaxed">
                   <p className="text-lg">
                     <Trans
                       i18nKey="intro1"
@@ -210,10 +202,10 @@ export default function About() {
                             href="https://eni.mg/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="font-semibold text-transparent bg-gradient-to-r from-indigo-400 to-purple-400 bg-clip-text hover:from-indigo-300 hover:to-purple-300 transition-all duration-300 underline decoration-indigo-400/50"
+                            className="font-semibold text-transparent bg-gradient-to-r from-indigo-600 to-purple-600 dark:from-indigo-400 dark:to-purple-400 bg-clip-text hover:from-indigo-500 hover:to-purple-500 dark:hover:from-indigo-300 dark:hover:to-purple-300 transition-all duration-300 underline decoration-indigo-400/50"
                           />
                         ),
-                        2: <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-400 to-indigo-400 bg-clip-text" />
+                        2: <span className="font-semibold text-transparent bg-gradient-to-r from-cyan-600 to-indigo-600 dark:from-cyan-400 dark:to-indigo-400 bg-clip-text" />
                       }}
                     />
                   </p>
@@ -222,59 +214,55 @@ export default function About() {
                     <Trans
                       i18nKey="intro2"
                       components={{
-                        1: <span className="font-semibold text-transparent bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text" />
+                        1: <span className="font-semibold text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text" />
                       }}
                     />
                   </p>
                 </div>
 
-                {/* Bouton CV - desktop seulement en bas à gauche */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              viewport={{ once: true }}
-              className='flex justify-center mt-2 lg:justify-end lg:mt-0'
-            >
-              <motion.button
-                whileHover={{ 
-                  scale: 1.05,
-                  boxShadow: "0 0 30px rgba(99, 102, 241, 0.5)"
-                }}
-                whileTap={{ scale: 0.95 }}
-                className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl font-semibold text-white overflow-hidden shadow-xl border border-white/10"
-                onClick={() => {
-                  const link = document.createElement('a');
-                  link.href = '/cv/Nirindrainy_Sylvano_Albertin_CV.pdf'; 
-                  link.download = 'Nirindrainy_Sylvano_Albertin_CV.pdf'; 
-                  document.body.appendChild(link);
-                  link.click();
-                  document.body.removeChild(link);
-                }}
-              >
-                {/* Effet de brillance animé */}
+                {/* Bouton CV */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
-                  initial={{ x: "-100%" }}
-                  whileHover={{ x: "100%" }}
-                  transition={{ duration: 0.6 }}
-                />
-                
-                <span className="relative z-10 flex items-center gap-2">
-                  {t('download_cv')}
-                </span>
-              </motion.button>
-            </motion.div>
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 0.8 }}
+                  viewport={{ once: true }}
+                  className='flex justify-center mt-6 lg:justify-end lg:mt-4'
+                >
+                  <motion.button
+                    whileHover={{
+                      scale: 1.05,
+                      boxShadow: "0 0 30px rgba(99, 102, 241, 0.4)"
+                    }}
+                    whileTap={{ scale: 0.95 }}
+                    className="group relative px-8 py-4 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl font-semibold text-white overflow-hidden shadow-xl border border-indigo-400/20 dark:border-white/10"
+                    onClick={() => {
+                      const link = document.createElement('a');
+                      link.href = '/cv/Nirindrainy_Sylvano_Albertin_CV.pdf';
+                      link.download = 'Nirindrainy_Sylvano_Albertin_CV.pdf';
+                      document.body.appendChild(link);
+                      link.click();
+                      document.body.removeChild(link);
+                    }}
+                  >
+                    <motion.div
+                      className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12"
+                      initial={{ x: "-100%" }}
+                      whileHover={{ x: "100%" }}
+                      transition={{ duration: 0.6 }}
+                    />
+                    <span className="relative z-10 flex items-center gap-2">
+                      {t('download_cv')}
+                    </span>
+                  </motion.button>
+                </motion.div>
               </div>
             </motion.div>
-
           </motion.div>
         </div>
       </motion.div>
 
-      {/* Grille décorative en arrière-plan */}
-      <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
+      {/* Grille décorative */}
+      <div className="absolute inset-0 bg-[linear-gradient(rgba(99,102,241,0.04)_1px,transparent_1px),linear-gradient(90deg,rgba(99,102,241,0.04)_1px,transparent_1px)] dark:bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:50px_50px] [mask-image:radial-gradient(ellipse_80%_50%_at_50%_0%,#000_70%,transparent_110%)]" />
     </section>
   )
 }
-

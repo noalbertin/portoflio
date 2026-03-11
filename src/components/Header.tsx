@@ -21,7 +21,7 @@ export default function Header() {
   const { t } = useTranslation()
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/80 backdrop-blur-lg border-b border-white/10">
+    <header className="fixed top-0 left-0 w-full z-50 bg-white/80 dark:bg-slate-950/80 backdrop-blur-lg border-b border-slate-200/60 dark:border-white/10 transition-colors duration-300">
       <nav className="flex items-center justify-between px-6 py-4 max-w-7xl mx-auto">
         {/* Logo with glow effect */}
         <motion.div
@@ -48,7 +48,7 @@ export default function Header() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex items-center space-x-1">
           {navItems.map((item, index) => (
-            <motion.li 
+            <motion.li
               key={index}
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -56,38 +56,35 @@ export default function Header() {
             >
               <a
                 href={`#${t(`anchor.${item.key}`)}`}
-                className="relative px-4 py-2 text-gray-300 hover:text-white transition-colors group"
+                className="relative px-4 py-2 text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white transition-colors group"
               >
                 <span className="relative z-10">{t(item.key)}</span>
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
+                  className="absolute inset-0 bg-gradient-to-r from-indigo-600/10 to-purple-600/10 dark:from-indigo-600/20 dark:to-purple-600/20 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity"
                   whileHover={{ scale: 1.05 }}
                 />
               </a>
             </motion.li>
           ))}
 
-          {/* Language & Theme Toggle with hover effects */}
           <li className='space-x-1'>
             <motion.div>
               <ThemeToggle />
             </motion.div>
           </li>
-          <li >
-            <motion.div >
+          <li>
+            <motion.div>
               <LanguageSwitcher />
             </motion.div>
           </li>
-          
         </ul>
 
         {/* Mobile Menu Button */}
         <div className="flex items-center space-x-2 md:hidden">
-          
           <ThemeToggle />
           <LanguageSwitcher isMobile />
           <motion.button
-            className="p-2 rounded-lg text-gray-300 hover:text-white hover:bg-white/10 transition-all border border-white/10"
+            className="p-2 rounded-lg text-slate-600 dark:text-gray-300 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-white/10 transition-all border border-slate-200 dark:border-white/10"
             onClick={() => setIsOpen(!isOpen)}
             aria-label="Toggle menu"
             whileHover={{ scale: 1.05 }}
@@ -98,11 +95,11 @@ export default function Header() {
         </div>
       </nav>
 
-      {/* Mobile Menu with backdrop blur */}
+      {/* Mobile Menu */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            className="md:hidden bg-slate-950/95 backdrop-blur-xl border-t border-white/10"
+            className="md:hidden bg-white/95 dark:bg-slate-950/95 backdrop-blur-xl border-t border-slate-200/60 dark:border-white/10 transition-colors duration-300"
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
@@ -120,9 +117,12 @@ export default function Header() {
                 >
                   <a
                     href={item.href}
-                    className="block px-4 py-3 rounded-lg text-sm font-medium text-gray-300 
-                    hover:bg-gradient-to-r hover:from-indigo-600/20 hover:to-purple-600/20 
-                    hover:text-white transition-all border border-transparent hover:border-white/10"
+                    className="block px-4 py-3 rounded-lg text-sm font-medium 
+                    text-slate-600 dark:text-gray-300
+                    hover:bg-gradient-to-r hover:from-indigo-600/10 hover:to-purple-600/10
+                    dark:hover:from-indigo-600/20 dark:hover:to-purple-600/20
+                    hover:text-slate-900 dark:hover:text-white 
+                    transition-all border border-transparent hover:border-slate-200 dark:hover:border-white/10"
                   >
                     {t(item.key)}
                   </a>
