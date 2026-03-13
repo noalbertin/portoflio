@@ -1,41 +1,49 @@
 'use client'
 
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 
-// 🟦 Définition des types du contexte
 interface ThemeContextType {
   theme: string;
   toggleTheme: () => void;
 }
 
-// 🟦 Valeur initiale du contexte
 export const ThemeContext = createContext<ThemeContextType>({
   theme: "light",
   toggleTheme: () => {},
 });
 
-// 🟦 Type pour les props du provider
 interface ThemeContextProviderProps {
   children: ReactNode;
 }
 
 const ThemeContextProvider = ({ children }: ThemeContextProviderProps) => {
-  const [theme, setTheme] = useState<string>("light");
+  
+  // 🟦 Lire le thème sauvegardé au démarrage
+  const [theme, setTheme] = useState<string>(() => {
+    if (typeof window !== "undefined") {
+      return localStorage.getItem("theme") || "light";
+    }
+    return "light";
+  });
+
+  // 🟦 Appliquer le thème au chargement initial
+  useEffect(() => {
+    const html = document.documentElement;
+    html.classList.remove("light", "dark");
+    html.classList.add(theme);
+  }, []);
 
   const toggleTheme = () => {
     const html = document.documentElement;
-  
-    if (theme === "light") {
-      html.classList.remove("light");
-      html.classList.add("dark");
-      setTheme("dark");
-    } else {
-      html.classList.remove("dark");
-      html.classList.add("light");
-      setTheme("light");
-    }
+    const newTheme = theme === "light" ? "dark" : "light";
+
+    html.classList.remove("light", "dark");
+    html.classList.add(newTheme);
+
+    // 🟦 Sauvegarder dans localStorage
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
   };
-  
 
   return (
     <ThemeContext.Provider value={{ theme, toggleTheme }}>
